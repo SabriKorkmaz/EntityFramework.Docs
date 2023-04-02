@@ -2706,7 +2706,7 @@ services.AddDbContext<CustomerContext>(
 One of the `IDbConnectionInterceptor` methods can then be implemented to configure the connection before it is used. `ConnectionOpeningAsync` is a good choice, since it can perform an async operation to obtain the connection string, find an access token, and so on. For example, imagine a service scoped to the current request that understands the current tenant:
 
 ```csharp
-services.AddScoped<ITenantConnectionStringFactory, TestTenantConnectionStringFactory>();
+services.AddScoped<IClientConnectionStringFactory, TestTenantConnectionStringFactory>();
 ```
 
 > [!WARNING]
